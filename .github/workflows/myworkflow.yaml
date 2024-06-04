@@ -11,3 +11,13 @@ jobs:
       run: echo "Hello world step 1"
     - name: Hello world step 2
       run: echo "Hello world step 2"
+
+  my-workflow-from-macos:
+    runs-on: macos-latest
+    
+    steps:
+    - name: Hello world step 1 from macos
+      run: echo "Hello world step 1 from macos"
+    - name: Afficher la version de macos
+      run: sw_vers
+
