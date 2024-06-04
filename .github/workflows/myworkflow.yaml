@@ -1,0 +1,13 @@
+name: Demo workflow
+run-name: Demo workflow
+on: [push]
+
+jobs:
+  my-workflow:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Hello world step 1
+      run: echo "Hello world step 1"
+    - name: Hello world step 2
+      run: echo "Hello world step 2"
