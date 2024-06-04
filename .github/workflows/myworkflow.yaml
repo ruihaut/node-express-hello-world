@@ -7,12 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Run ls on current dir
+      run: ls -lsa
     - name: Checkout git repo
       uses: actions/checkout@v4.1.5
+    - name: Run ls on current dir after checkout
+      run: ls -lsa
     - name: Setup Node.js environment
       uses: actions/setup-node@v4.0.2
       with:
         node-version: 20.x
     - name: Install dependencies
       run: npm ci
-
+    - name: Run ls on current dir after install
+      run: ls -lsa
