@@ -7,16 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Hello world step 1
-      run: echo "Hello world step 1"
-    - name: Hello world step 2
-      run: echo "Hello world step 2"
-
-  my-workflow-macos:
-    runs-on: macos-latest
-    
-    steps:
-    - name: Hello world step 1
-      run: echo "Hello world step 1 from macos"
-    - name: Hello world step 2
-      run: sw_vers
+    - name: Checkout git repo
+      uses: actions/checkout@v4.1.5
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v4.0.2
+      with:
+        node-version: 20.x
+    - name: Install dependencies
+      run: npm ci
